@@ -19,7 +19,7 @@ FOR USE IT IN LOCAL YOU MUST HAVE:
 
     - Add the contract address into the: 
         - function set_contract() in app/utils.py
-        - in app/static/JS/buyTokenPage.js and profilePage.js
+        - in app/static/JS/buyTokenPage.js(line 1852) and profilePage.js(line 1828)
     - Initialize the conract using the function initialize_contract() in utils.py from the shell
     - Create a super User	
 
