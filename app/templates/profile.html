@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<head>
+    <script type = "text/javascript" src="/static/JS/web3.min.js"></script>
+</head>
+    <h1 class="text-center">Your Wallet</h1>
+    <br>
+    <table class="table table-dark">
+          <thead>
+            <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Private Key</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ profile.address }}</td>
+              <td>{{ profile.private_key }}</td>
+             </tr>
+          </tbody>
+    </table> <br>
+    <h1 class="text-center">Your Tokens</h1>
+    {% if tokens > 0 %}
+        {% for tok in tokens %}
+    <table class="table table-dark" id="1">
+          <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price(wei)</th>
+                <th scope="col">Id</th>
+                <th scope="col">On sale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ tok.2 }}</td>
+              <td>{{ tok.1 }}</td>
+              <td>{{ tok.0 }}</td>
+              <td>{{ tok.4 }}</td>
+             </tr>
+          </tbody>
+    </table> <br>
+    {% endfor %}
+    {% else %}
+    <p>You don’t have any tokens yet</p> <br>
+    {% endif %}
+    <div class="text-center">
+    <h1>Put on Sale Tokens</h1>
+        <input type="number" id="tokenId" placeholder="Inser ID token"  disabled>
+        <input type="number" id="tokenPrice" placeholder="Inser price in Eth" disabled>
+        <button id="loginButton" onclick="" class="btn btn-success">Login Metamask</button>
+        <button id="buy" onclick="" type="submit" class="btn btn-success" disabled>Sell</button>  <br>
+     <br>
+    <h1 class="text-center">Gift token</h1>
+        <input type="number" id="idToken" placeholder="Inser ID token" disabled>
+        <input type="text" id="addressToSend" placeholder="Inser address to send" disabled>
+        <button id="send" onclick="" type="submit" class="btn btn-success" disabled>Send</button>
+        <script src="/static/JS/profilePage.js"></script>
+    </div>
+{% endblock content %}

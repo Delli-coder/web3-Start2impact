@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<head>
+    <script type = "text/javascript" src="/static/JS/web3.min.js"></script>
+</head>
+    {% for data in token %}
+    <table class="table table-dark">
+          <thead>
+            <tr>
+                <th scope="col">Id Token</th>
+                <th scope="col">Name</th>
+                <th scope="col">Uri</th>
+                <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ data.token_id }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.uri }}</td>
+              <td> eth {{ data.price}}</td>
+             </tr>
+            <input hidden id="tokenId" value={{data.token_id}} >
+            <input hidden id="tokenPrice" value={{data.price}} >
+          </tbody>
+    </table>
+    {% endfor %}
+    <button id="loginButton" onclick="" class="btn btn-success">Login Metamask</button>
+    <button id="buy" onclick="" type="submit" class="btn btn-success" disabled>Buy</button>
+    <script src="/static/JS/buyTokenPage.js"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="page-header" style="text-aligne:center" xmlns="http://www.w3.org/1999/html">
+        <h1>Market</h1>
+    </div>
+        <div class="container">
+        <div class="row">
+                    {% for token in tokens %}
+            <div class="col-sm-4">
+                <div class="card border-secondary" style="width: 25rem;">
+                <div class="card-header">
+                    TokenId {{token.token_id}}
+                </div>
+                  <img src="{{ token.image.url }}"  class="card-img-top" width="250" height="180">
+                  <div class="card-body">
+                    <h3 class="card-title" style="text-align:center"  >{{ token.name }}</h3>
+                    <p class="card-text">{{token.uri}}<br> Price: eth {{token.price}}</p>
+                       <form method="POST">
+                      {% csrf_token %}
+                     <input hidden type="number" id="token_id" name="token_id" value={{token.token_id}}>
+                    <button type="submit" class="btn btn-success">Buy</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        </div>
+
+{% endblock %}

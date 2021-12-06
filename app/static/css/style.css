@@ -1,0 +1,49 @@
+body {
+  background: #F0F8FF;
+  color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+p {
+    color: black;
+    font-family: 'Calibri';
+    font-size: 20px;
+}
+
+/* navbar */
+.bg-steel {
+    background-color: #006400;
+    border-color: #E7E7E7;
+}
+
+.site-header .navbar-brand {
+  color: #B8860B;
+}
+
+.site-header .navbar-nav .nav-brand.active {
+  font-weight: 500;
+}
+
+.image {
+    size: 25px;
+}
+
+.card {
+  box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.30);
+  background-color: trasparent;
+}
+
+.card .card-header {
+    font-family: 'Calibri';
+    font-size: 18px;
+    margin: 8px;
+}
+
+.page-header {
+     font-family: 'Lobster';
+     text-align: center;
+     margin-top: 0;
+     padding: 20px 20px 20px 40px;
+}
